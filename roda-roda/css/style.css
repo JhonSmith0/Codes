@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  background: #333;
+
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.conteiner {
+  width: 70rem;
+  height: 30rem;
+  background: #222;
+  position: relative;
+
+  padding: 9rem 0;
+  overflow: hidden;
+
+  display: flex;
+  gap: 2.4rem;
+  --velocidade: 0.05s;
+}
+
+.conteiner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 0.5rem;
+  height: 100%;
+
+  background: yellow;
+}
+
+.box {
+  position: absolute;
+  transition: all var(--velocidade) 0s;
+
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  height: 120px;
+
+  background: #444;
+
+  display: grid;
+  place-content: center;
+
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #fff;
+}
